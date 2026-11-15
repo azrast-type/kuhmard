@@ -1,0 +1,98 @@
+[
+ {
+  "alts": {
+   "peh.medi.dsr25": [
+    "peh.medi",
+    25
+   ],
+   "peh.init.dsr25": [
+    "peh.init",
+    25
+   ],
+   "alefmadda.dsr10": [
+    "alefmadda",
+    10
+   ],
+   "alefmadda.dsl10": [
+    "alefmadda",
+    -10
+   ],
+   "yeh.medi.dsr20": [
+    "yeh.medi",
+    20
+   ],
+   "theh.init.dsr20": [
+    "theh.init",
+    20
+   ],
+   "lam.medi.dsl20": [
+    "lam.medi",
+    -20
+   ],
+   "alefmadda.dsr5": [
+    "alefmadda",
+    5
+   ],
+   "yehhamza.init.dsl5": [
+    "yehhamza.init",
+    -5
+   ]
+  },
+  "rules": [
+   [
+    "peh.medi",
+    "alefhamzabelow.fina",
+    "right",
+    "peh.medi.dsr25"
+   ],
+   [
+    "peh.init",
+    "alefhamzabelow.fina",
+    "right",
+    "peh.init.dsr25"
+   ],
+   [
+    "alefmadda",
+    "alefmadda",
+    "right",
+    "alefmadda.dsr10"
+   ],
+   [
+    "alefmadda",
+    "alefmadda",
+    "left",
+    "alefmadda.dsl10"
+   ],
+   [
+    "yeh.medi",
+    "alefhamzabelow.fina",
+    "right",
+    "yeh.medi.dsr20"
+   ],
+   [
+    "theh.init",
+    "lam.medi",
+    "right",
+    "theh.init.dsr20"
+   ],
+   [
+    "theh.init",
+    "lam.medi",
+    "left",
+    "lam.medi.dsl20"
+   ],
+   [
+    "alefmadda",
+    "yehhamza.init",
+    "right",
+    "alefmadda.dsr5"
+   ],
+   [
+    "alefmadda",
+    "yehhamza.init",
+    "left",
+    "yehhamza.init.dsl5"
+   ]
+  ]
+ }
+]
