@@ -28,7 +28,7 @@
     <key>openTypeHheaLineGap</key>
     <integer>0</integer>
     <key>openTypeNameDesigner</key>
-    <string>Aly Taghipour, Ali Shir Dastina, Fateme Cheraghi, Fateme Bluekey</string>
+    <string>Aly Taghipour, Ali Shirdastian, Fateme Cheraghi, Fateme Bluekey</string>
     <key>openTypeNameDesignerURL</key>
     <string>https://azrast.com</string>
     <key>openTypeNameLicense</key>
@@ -79,9 +79,9 @@
       </dict>
     </array>
     <key>openTypeNameUniqueID</key>
-    <string>Kuhmard-Bold-1.002</string>
+    <string>Kuhmard-Bold-1.003</string>
     <key>openTypeNameVersion</key>
-    <string>Version 1.002</string>
+    <string>Version 1.003</string>
     <key>openTypeOS2CodePageRanges</key>
     <array>
       <integer>0</integer>
@@ -197,7 +197,7 @@
     <key>versionMajor</key>
     <integer>1</integer>
     <key>versionMinor</key>
-    <integer>2</integer>
+    <integer>3</integer>
     <key>xHeight</key>
     <integer>364</integer>
   </dict>
