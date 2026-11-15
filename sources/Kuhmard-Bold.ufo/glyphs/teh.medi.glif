@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="teh.medi" format="2">
+  <advance width="351"/>
+  <unicode hex="FE98"/>
+  <outline>
+    <contour>
+      <point x="293" y="276" type="line"/>
+      <point x="293" y="364" type="line"/>
+      <point x="75" y="364" type="line"/>
+      <point x="75" y="89" type="line"/>
+      <point x="-3" y="89" type="line"/>
+      <point x="-3" y="0" type="line"/>
+      <point x="351" y="0" type="line"/>
+      <point x="351" y="89" type="line"/>
+      <point x="226" y="89" type="line"/>
+      <point x="226" y="276" type="line"/>
+    </contour>
+    <contour>
+      <point x="226" y="447" type="line"/>
+      <point x="226" y="535" type="line"/>
+      <point x="-15" y="535" type="line"/>
+      <point x="-15" y="447" type="line"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni003D.latn" format="2">
+  <advance width="451"/>
+  <outline>
+    <contour>
+      <point x="31" y="131" type="line"/>
+      <point x="420" y="131" type="line"/>
+      <point x="420" y="227" type="line"/>
+      <point x="31" y="227" type="line"/>
+    </contour>
+    <contour>
+      <point x="31" y="312" type="line"/>
+      <point x="420" y="312" type="line"/>
+      <point x="420" y="408" type="line"/>
+      <point x="31" y="408" type="line"/>
+    </contour>
+  </outline>
+</glyph>
