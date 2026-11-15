@@ -641,6 +641,10 @@
       <string>uni2194</string>
       <string>uni21C4</string>
       <string>uni21C6</string>
+      <string>caroncomb.alt</string>
+      <string>idotaccent</string>
+      <string>periodcentered.loclCAT</string>
+      <string>periodcentered.loclCAT.case</string>
     </array>
   </dict>
 </plist>
