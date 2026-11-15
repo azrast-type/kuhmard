@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="noon.init" format="2">
+  <advance width="349"/>
+  <unicode hex="FEE7"/>
+  <outline>
+    <contour>
+      <point x="75" y="364" type="line"/>
+      <point x="75" y="89" type="line"/>
+      <point x="-3" y="89" type="line"/>
+      <point x="-3" y="0" type="line"/>
+      <point x="226" y="0" type="line"/>
+      <point x="226" y="276" type="line"/>
+      <point x="293" y="276" type="line"/>
+      <point x="293" y="364" type="line"/>
+    </contour>
+    <contour>
+      <point x="208" y="429" type="line"/>
+      <point x="208" y="553" type="line"/>
+      <point x="84" y="553" type="line"/>
+      <point x="84" y="429" type="line"/>
+    </contour>
+  </outline>
+</glyph>

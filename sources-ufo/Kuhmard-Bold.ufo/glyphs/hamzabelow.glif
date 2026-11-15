@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="hamzabelow" format="2">
+  <unicode hex="0655"/>
+  <outline>
+    <contour>
+      <point x="-78" y="-140" type="line"/>
+      <point x="8" y="-140" type="line"/>
+      <point x="8" y="-109" type="line"/>
+      <point x="78" y="-109" type="line"/>
+      <point x="78" y="-70" type="line"/>
+      <point x="8" y="-70" type="line"/>
+      <point x="8" y="-40" type="line"/>
+      <point x="78" y="-40" type="line"/>
+      <point x="78" y="0" type="line"/>
+      <point x="-42" y="0" type="line"/>
+      <point x="-42" y="-108" type="line"/>
+      <point x="-78" y="-108" type="line"/>
+    </contour>
+  </outline>
+</glyph>
