@@ -1,0 +1,4 @@
+# This is the official list of project authors for copyright purposes.
+# Kuhmard, by Azrast (https://azrast.com)
+
+Azrast <info@azrast.com>

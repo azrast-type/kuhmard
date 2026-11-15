@@ -1,0 +1,7 @@
+fonttools>=4.47
+skia-pathops>=0.8
+numpy
+scipy
+Pillow
+uharfbuzz
+ufoLib2

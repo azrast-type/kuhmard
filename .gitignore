@@ -1,0 +1,6 @@
+sources/otf/
+sources/woff2/
+__pycache__/
+*.pyc
+.DS_Store
+sources/features/
