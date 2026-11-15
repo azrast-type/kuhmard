@@ -19,6 +19,18 @@ fontbakery version: 1.1.0
     <div>
 
 
+> 
+> Glyphs in the GDEF mark glyph class become non-spacing and may be repositioned
+> if they have mark anchors.
+> 
+> Only combining mark glyphs should be in that class. Any non-mark glyph
+> must not be in that class, in particular spacing glyphs.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/2877
 
 
 
@@ -38,6 +50,18 @@ U+2028 and U+2029</p>
     <div>
 
 
+> 
+> It is a common practice to have math signs sharing the same width
+> (preferably the same width as tabular figures accross the entire font family).
+> 
+> This probably comes from the will to avoid additional tabular math signs
+> knowing that their design can easily share the same width.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/3832
 
 
 
@@ -48,7 +72,7 @@ The following math glyphs have a different width, though:</p>
 <p>Width = 442:
 multiply, greater, less</p>
 <p>Width = 451:
-uni00B1, uni00AC, uni2260</p>
+uni2260, uni00B1, uni00AC</p>
 <p>Width = 499:
 uni2248</p>
 <p>Width = 414:
@@ -65,6 +89,29 @@ uni2264, uni2265</p>
     <div>
 
 
+> 
+> The 'Soft Hyphen' character (codepoint 0x00AD) is used to mark
+> a hyphenation possibility within a word in the absence of or
+> overriding dictionary hyphenation.
+> 
+> It is sometimes designed empty with no width (such as a control character),
+> sometimes the same as the traditional hyphen, sometimes double encoded with
+> the hyphen.
+> 
+> That being said, it is recommended to not include it in the font at all,
+> because discretionary hyphenation should be handled at the level of the
+> shaping engine, not the font. Also, even if present, the software would
+> not display that character.
+> 
+> More discussion at:
+> https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/4046
+> See also: https://github.com/fonttools/fontbakery/issues/3486
 
 
 
@@ -83,6 +130,21 @@ uni2264, uni2265</p>
     <div>
 
 
+> 
+> The purpose of this check is to ensure images (either raster or vector files)
+> are not excessively large in filesize and resolution.
+> 
+> These constraints are loosely based on infrastructure limitations under
+> default configurations.
+> 
+> It also ensures that the article page has a minimum length and includes
+> at least one visual asset.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/4594
 
 
 
@@ -101,6 +163,22 @@ uni2264, uni2265</p>
     <div>
 
 
+> 
+> This check ensures that all encoded glyphs in the font are covered by a
+> subset declared in the METADATA.pb. Google Fonts splits the font into
+> a set of subset fonts based on the contents of the `subsets` field and
+> the subset definitions in the `glyphsets` repository.
+> 
+> Any encoded glyphs which are not by any of these subset definitions
+> will not be served in the subsetted fonts, and so will be unreachable to
+> the end user.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/4097
+> See also: https://github.com/fonttools/fontbakery/pull/4273
 
 
 
@@ -118,9 +196,9 @@ definitions.</p>
 <li>U+02D8 BREVE: try adding one of: canadian-aboriginal, yi</li>
 <li>U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi</li>
 <li>U+02DB OGONEK: try adding one of: canadian-aboriginal, yi</li>
-<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, tifinagh, coptic, math</li>
+<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: math, coptic, tifinagh, cherokee</li>
 <li>U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic</li>
-<li>U+0307 COMBINING DOT ABOVE: try adding one of: tifinagh, math, syriac, hebrew, tai-le, todhri, old-permic, canadian-aboriginal, coptic, duployan, malayalam</li>
+<li>U+0307 COMBINING DOT ABOVE: try adding one of: coptic, tai-le, old-permic, math, todhri, tifinagh, hebrew, syriac, canadian-aboriginal, duployan, malayalam</li>
 <li>U+030A COMBINING RING ABOVE: try adding one of: duployan, syriac
 314 more.</li>
 </ul>
@@ -138,6 +216,16 @@ definitions.</p>
     <div>
 
 
+> 
+> This check uses a heuristic to determine which GF glyphsets a font supports.
+> Then it checks the font for correct shaping behaviour for all languages in
+> those glyphsets.
+> 
+
+
+
+
+> Original proposal: https://github.com/googlefonts/fontbakery/issues/4147
 
 
 
@@ -434,6 +522,23 @@ definitions.</p>
     <div>
 
 
+> 
+> An accent placed on characters with a "soft dot", like i or j, causes
+> the dot to disappear.
+> An explicit dot above can be added where required.
+> See "Diacritics on i and j" in Section 7.1, "Latin" in The Unicode Standard.
+> 
+> Characters with the Soft_Dotted property are listed in
+> https://www.unicode.org/Public/UCD/latest/ucd/PropList.txt
+> 
+> See also:
+> https://googlefonts.github.io/gf-guide/diacritics.html#soft-dotted-glyphs
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/4059
 
 
 
@@ -453,6 +558,23 @@ definitions.</p>
     <div>
 
 
+> 
+> This check heuristically looks for on-curve points which are close to, but
+> do not sit on, significant boundary coordinates. For example, a point which
+> has a Y-coordinate of 1 or -1 might be a misplaced baseline point. As well as
+> the baseline, here we also check for points near the x-height (but only for
+> lowercase Latin letters), cap-height, ascender and descender Y coordinates.
+> 
+> Not all such misaligned curve points are a mistake, and sometimes the design
+> may call for points in locations near the boundaries. As this check is liable
+> to generate significant numbers of false positives, it will pass if there are
+> more than 100 reported misalignments.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/pull/3088
 
 
 
@@ -494,6 +616,18 @@ definitions.</p>
     <div>
 
 
+> 
+> This check looks for consecutive line segments which have the same angle. This
+> normally happens if an outline point has been added by accident.
+> 
+> This check is not run for variable fonts, as they may legitimately have
+> colinear vectors.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/pull/3088
 
 
 
@@ -535,6 +669,19 @@ definitions.</p>
     <div>
 
 
+> 
+> This check detects line segments which are nearly, but not quite, exactly
+> horizontal or vertical. Sometimes such lines are created by design, but often
+> they are indicative of a design error.
+> 
+> This check is disabled for italic styles, which often contain nearly-upright
+> lines.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/pull/3088
 
 
 
@@ -576,6 +723,55 @@ definitions.</p>
     <div>
 
 
+> 
+> The OpenType 'meta' table originated at Apple. Microsoft added it to OT with
+> just two DataMap records:
+> 
+> - dlng: comma-separated ScriptLangTags that indicate which scripts,
+> or languages and scripts, with possible variants, the font is designed for.
+> 
+> - slng: comma-separated ScriptLangTags that indicate which scripts,
+> or languages and scripts, with possible variants, the font supports.
+> 
+> 
+> The slng structure is intended to describe which languages and scripts the
+> font overall supports. For example, a Traditional Chinese font that also
+> contains Latin characters, can indicate Hant,Latn, showing that it supports
+> Hant, the Traditional Chinese variant of the Hani script, and it also
+> supports the Latn script.
+> 
+> The dlng structure is far more interesting. A font may contain various glyphs,
+> but only a particular subset of the glyphs may be truly "leading" in the design,
+> while other glyphs may have been included for technical reasons. Such a
+> Traditional Chinese font could only list Hant there, showing that it’s designed
+> for Traditional Chinese, but the font would omit Latn, because the developers
+> don’t think the font is really recommended for purely Latin-script use.
+> 
+> The tags used in the structures can comprise just script, or also language
+> and script. For example, if a font has Bulgarian Cyrillic alternates in the
+> locl feature for the cyrl BGR OT languagesystem, it could also indicate in
+> dlng explicitly that it supports bul-Cyrl. (Note that the scripts and languages
+> in meta use the ISO language and script codes, not the OpenType ones).
+> 
+> This check ensures that the font has the meta table containing the
+> slng and dlng structures.
+> 
+> All families in the Google Fonts collection should contain the 'meta' table.
+> Windows 10 already uses it when deciding on which fonts to fall back to.
+> The Google Fonts API and also other environments could use the data for
+> smarter filtering. Most importantly, those entries should be added
+> to the Noto fonts.
+> 
+> In the font making process, some environments store this data in external
+> files already. But the meta table provides a convenient way to store this
+> inside the font file, so some tools may add the data, and unrelated tools
+> may read this data. This makes the solution much more portable and universal.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/3349
 
 
 
@@ -594,6 +790,31 @@ definitions.</p>
     <div>
 
 
+> 
+> Microsoft keeps a list of font vendors and their respective contact info. This
+> list is updated regularly and is indexed by a 4-char "Vendor ID" which is
+> stored in the achVendID field of the OS/2 table.
+> 
+> Registering your ID is not mandatory, but it is a good practice since some
+> applications may display the type designer / type foundry contact info on some
+> dialog and also because that info will be visible on Microsoft's website:
+> 
+> https://docs.microsoft.com/en-us/typography/vendors/
+> 
+> This check verifies whether or not a given font's vendor ID is registered in
+> that list or if it has some of the default values used by the most common
+> font editors.
+> 
+> Each new FontBakery release includes a cached copy of that list of vendor IDs.
+> If you registered recently, you're safe to ignore warnings emitted by this
+> check, since your ID will soon be included in one of our upcoming releases.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/3943
+> See also: https://github.com/fonttools/fontbakery/issues/4829
 
 
 
@@ -616,8 +837,8 @@ definitions.</p>
 
 | 💥 ERROR | ☠ FATAL | 🔥 FAIL | ⚠️ WARN | ⏩ SKIP | ℹ️ INFO | ✅ PASS | 🔎 DEBUG | 
 | ---|---|---|---|---|---|---|---|
-| 0 | 0 | 0 | 12 | 122 | 5 | 97 | 0 | 
-| 0% | 0% | 0% | 5% | 52% | 2% | 41% | 0% | 
+| 0 | 0 | 0 | 12 | 125 | 5 | 94 | 0 | 
+| 0% | 0% | 0% | 5% | 53% | 2% | 40% | 0% | 
 
 
 
