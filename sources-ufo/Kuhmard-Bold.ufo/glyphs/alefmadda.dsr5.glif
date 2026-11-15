@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="alefmadda.dsr5" format="2">
+  <advance width="330"/>
+  <outline>
+    <contour>
+      <point x="56" y="586" type="line"/>
+      <point x="56" y="0" type="line"/>
+      <point x="207" y="0" type="line"/>
+      <point x="207" y="497" type="line"/>
+      <point x="274" y="497" type="line"/>
+      <point x="274" y="586" type="line"/>
+    </contour>
+    <contour>
+      <point x="-31" y="664" type="line"/>
+      <point x="54" y="664" type="line"/>
+      <point x="54" y="689" type="line"/>
+      <point x="279" y="689" type="line"/>
+      <point x="279" y="769" type="line"/>
+      <point x="-31" y="769" type="line"/>
+    </contour>
+  </outline>
+</glyph>

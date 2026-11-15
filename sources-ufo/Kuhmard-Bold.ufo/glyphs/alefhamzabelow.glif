@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="alefhamzabelow" format="2">
+  <advance width="330"/>
+  <unicode hex="0625"/>
+  <unicode hex="FE87"/>
+  <outline>
+    <contour>
+      <point x="56" y="586" type="line"/>
+      <point x="56" y="0" type="line"/>
+      <point x="207" y="0" type="line"/>
+      <point x="207" y="497" type="line"/>
+      <point x="274" y="497" type="line"/>
+      <point x="274" y="586" type="line"/>
+    </contour>
+    <contour>
+      <point x="34" y="-252" type="line"/>
+      <point x="141" y="-252" type="line"/>
+      <point x="141" y="-214" type="line"/>
+      <point x="229" y="-214" type="line"/>
+      <point x="229" y="-164" type="line"/>
+      <point x="141" y="-164" type="line"/>
+      <point x="141" y="-126" type="line"/>
+      <point x="229" y="-126" type="line"/>
+      <point x="229" y="-77" type="line"/>
+      <point x="79" y="-77" type="line"/>
+      <point x="79" y="-213" type="line"/>
+      <point x="34" y="-213" type="line"/>
+    </contour>
+  </outline>
+</glyph>
