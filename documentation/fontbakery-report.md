@@ -46,13 +46,13 @@ U+2028 and U+2029</p>
 * ⚠️ **WARN** <p>The most common width is 472 among a set of 4 math glyphs.
 The following math glyphs have a different width, though:</p>
 <p>Width = 442:
-greater, multiply, less</p>
+multiply, greater, less</p>
 <p>Width = 451:
 uni00B1, uni00AC, uni2260</p>
 <p>Width = 499:
 uni2248</p>
 <p>Width = 414:
-uni2265, uni2264</p>
+uni2264, uni2265</p>
  [code: width-outliers]
 
 
@@ -88,7 +88,7 @@ uni2265, uni2264</p>
 
 
 
-* ⚠️ **WARN** <p>Family metadata at . does not have an article.</p>
+* ⚠️ **WARN** <p>Family metadata at fonts/otf does not have an article.</p>
  [code: lacks-article]
 
 
@@ -115,13 +115,13 @@ definitions.</p>
 <li>U+0009 : try adding symbols</li>
 <li>U+000A : try adding symbols</li>
 <li>U+0085 : try adding symbols</li>
-<li>U+02D8 BREVE: try adding one of: yi, canadian-aboriginal</li>
-<li>U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal</li>
-<li>U+02DB OGONEK: try adding one of: yi, canadian-aboriginal</li>
-<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: coptic, tifinagh, cherokee, math</li>
-<li>U+0306 COMBINING BREVE: try adding one of: old-permic, tifinagh</li>
-<li>U+0307 COMBINING DOT ABOVE: try adding one of: old-permic, math, canadian-aboriginal, todhri, malayalam, hebrew, tifinagh, syriac, coptic, tai-le, duployan</li>
-<li>U+030A COMBINING RING ABOVE: try adding one of: syriac, duployan
+<li>U+02D8 BREVE: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02DB OGONEK: try adding one of: canadian-aboriginal, yi</li>
+<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, tifinagh, coptic, math</li>
+<li>U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic</li>
+<li>U+0307 COMBINING DOT ABOVE: try adding one of: tifinagh, math, syriac, hebrew, tai-le, todhri, old-permic, canadian-aboriginal, coptic, duployan, malayalam</li>
+<li>U+030A COMBINING RING ABOVE: try adding one of: duployan, syriac
 314 more.</li>
 </ul>
 <p>Use -F or --full-lists to disable shortening of long lists.</p>
@@ -616,8 +616,8 @@ definitions.</p>
 
 | 💥 ERROR | ☠ FATAL | 🔥 FAIL | ⚠️ WARN | ⏩ SKIP | ℹ️ INFO | ✅ PASS | 🔎 DEBUG | 
 | ---|---|---|---|---|---|---|---|
-| 0 | 0 | 0 | 12 | 125 | 5 | 94 | 0 | 
-| 0% | 0% | 0% | 5% | 53% | 2% | 40% | 0% | 
+| 0 | 0 | 0 | 12 | 122 | 5 | 97 | 0 | 
+| 0% | 0% | 0% | 5% | 52% | 2% | 41% | 0% | 
 
 
 
