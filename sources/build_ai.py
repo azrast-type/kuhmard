@@ -52,10 +52,10 @@ MARK_GAP = (json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__
             if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "marks_drawn.json")) else 55)
 LINE_ASC, LINE_DESC = 900, 400   # one line height (1.3) on every system; was 920/430 Mac, 1150/560 Windows (9 Nov review)
 SPACE_W = 138      # word space: Aly's استاد کهنه note (4 Nov): about 250 units between words (was 45 -> 156)
-VERSION = "1.002"  # 0.86: Google Fonts Latin Core accents + Azrast credits; 0.861: dots of ث ش ژ level with ل (14 Nov 2026); 1.0: approved by Aly as the first release (14 Nov 2026); 1.001: Dutch accents attach, Urdu ٹ ڈ ڑ ے (14 Nov 2026); 1.002: Google Fonts Latin language forms caroncomb.alt, idotaccent, Catalan l·l (15 Nov 2026)
+VERSION = "1.003"  # 0.86: Google Fonts Latin Core accents + Azrast credits; 0.861: dots of ث ش ژ level with ل (14 Nov 2026); 1.0: approved by Aly as the first release (14 Nov 2026); 1.001: Dutch accents attach, Urdu ٹ ڈ ڑ ے (14 Nov 2026); 1.002: Google Fonts Latin language forms caroncomb.alt, idotaccent, Catalan l·l (15 Nov 2026); 1.003: designer name spelled Ali Shirdastian (15 Nov 2026)
 # the Azrast team, in the order of the team page (Aly, 14 Nov 2026)
 TEAM = [("Aly Taghipour", "Co-founder & Technical Director"),
-        ("Ali Shir Dastina", "Co-founder & Design Director"),
+        ("Ali Shirdastian", "Co-founder & Design Director"),
         ("Fateme Cheraghi", "Lead Type Designer"),
         ("Fateme Bluekey", "Type Designer")]
 CREDITS = ", ".join(n for n, _ in TEAM)
