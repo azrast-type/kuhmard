@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ghain.init" format="2">
+  <advance width="612"/>
+  <unicode hex="FECF"/>
+  <outline>
+    <contour>
+      <point x="450" y="221" type="line"/>
+      <point x="556" y="221" type="line"/>
+      <point x="556" y="364" type="line"/>
+      <point x="287" y="364" type="line" smooth="yes"/>
+      <point x="223" y="364"/>
+      <point x="173" y="349"/>
+      <point x="139" y="319" type="curve" smooth="yes"/>
+      <point x="104" y="288"/>
+      <point x="86" y="248"/>
+      <point x="86" y="197" type="curve" smooth="yes"/>
+      <point x="86" y="160" type="line" smooth="yes"/>
+      <point x="86" y="137"/>
+      <point x="91" y="115"/>
+      <point x="100" y="96" type="curve"/>
+      <point x="101" y="92"/>
+      <point x="99" y="89"/>
+      <point x="96" y="89" type="curve" smooth="yes"/>
+      <point x="-3" y="89" type="line"/>
+      <point x="-3" y="0" type="line"/>
+      <point x="553" y="0" type="line"/>
+      <point x="553" y="89" type="line"/>
+      <point x="247" y="89" type="line"/>
+      <point x="246" y="197" type="line" smooth="yes"/>
+      <point x="246" y="216"/>
+      <point x="251" y="232"/>
+      <point x="260" y="246" type="curve"/>
+      <point x="269" y="258"/>
+      <point x="280" y="267"/>
+      <point x="292" y="271" type="curve"/>
+      <point x="304" y="274"/>
+      <point x="324" y="275"/>
+      <point x="351" y="275" type="curve" smooth="yes"/>
+      <point x="450" y="275" type="line"/>
+    </contour>
+    <contour>
+      <point x="375" y="429" type="line"/>
+      <point x="375" y="553" type="line"/>
+      <point x="251" y="553" type="line"/>
+      <point x="251" y="429" type="line"/>
+    </contour>
+  </outline>
+</glyph>

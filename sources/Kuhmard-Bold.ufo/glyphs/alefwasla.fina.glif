@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="alefwasla.fina" format="2">
+  <advance width="332"/>
+  <unicode hex="FB51"/>
+  <outline>
+    <contour>
+      <point x="308" y="0" type="line"/>
+      <point x="332" y="0" type="line"/>
+      <point x="332" y="89" type="line"/>
+      <point x="274" y="89" type="line"/>
+      <point x="274" y="586" type="line"/>
+      <point x="56" y="586" type="line"/>
+      <point x="56" y="497" type="line"/>
+      <point x="123" y="497" type="line"/>
+      <point x="123" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

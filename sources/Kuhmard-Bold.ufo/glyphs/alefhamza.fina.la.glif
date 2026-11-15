@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="alefhamza.fina.la" format="2">
+  <advance width="279"/>
+  <outline>
+    <contour>
+      <point x="56" y="586" type="line"/>
+      <point x="56" y="0" type="line"/>
+      <point x="279" y="0" type="line"/>
+      <point x="279" y="89" type="line"/>
+      <point x="207" y="89" type="line"/>
+      <point x="207" y="497" type="line"/>
+      <point x="274" y="497" type="line"/>
+      <point x="274" y="586" type="line"/>
+    </contour>
+    <contour>
+      <point x="34" y="646" type="line"/>
+      <point x="141" y="646" type="line"/>
+      <point x="141" y="684" type="line"/>
+      <point x="229" y="684" type="line"/>
+      <point x="229" y="734" type="line"/>
+      <point x="141" y="734" type="line"/>
+      <point x="141" y="771" type="line"/>
+      <point x="229" y="771" type="line"/>
+      <point x="229" y="821" type="line"/>
+      <point x="79" y="821" type="line"/>
+      <point x="79" y="685" type="line"/>
+      <point x="34" y="685" type="line"/>
+    </contour>
+  </outline>
+</glyph>
