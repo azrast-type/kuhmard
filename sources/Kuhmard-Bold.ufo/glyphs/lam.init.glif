@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lam.init" format="2">
+  <advance width="349"/>
+  <unicode hex="FEDF"/>
+  <outline>
+    <contour>
+      <point x="75" y="89" type="line"/>
+      <point x="-3" y="89" type="line"/>
+      <point x="-3" y="0" type="line"/>
+      <point x="226" y="0" type="line"/>
+      <point x="226" y="488" type="line"/>
+      <point x="293" y="488" type="line"/>
+      <point x="293" y="586" type="line"/>
+      <point x="75" y="586" type="line"/>
+    </contour>
+  </outline>
+</glyph>
