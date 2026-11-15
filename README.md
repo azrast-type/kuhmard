@@ -31,13 +31,12 @@ There are two ways to build Kuhmard. Both give the same font.
 
 ### From the UFO source (Google Fonts)
 
-`sources-ufo/Kuhmard-Bold.ufo` holds every outline, width, OpenType feature and font setting.
-Build it with [gftools](https://github.com/googlefonts/gftools):
+`sources/Kuhmard-Bold.ufo` holds every outline, width, OpenType feature and font setting.
+Build it in one command with [gftools](https://github.com/googlefonts/gftools):
 
 ```
 pip install gftools
-cd sources-ufo
-gftools builder config.yaml   # writes fonts/ttf, fonts/otf and fonts/webfonts
+gftools builder sources/config.yaml   # writes fonts/ttf, fonts/otf and fonts/webfonts
 ```
 
 ### From the drawings
@@ -49,7 +48,7 @@ pip install -r requirements.txt
 brew install potrace          # or apt install potrace
 cd sources
 python3 build_ai.py Bold      # writes otf/, woff2/ and features/Kuhmard-Bold.fea
-python3 export_ufo.py otf/Kuhmard-Bold.otf features/Kuhmard-Bold.fea ../sources-ufo/Kuhmard-Bold.ufo
+python3 export_ufo.py otf/Kuhmard-Bold.otf features/Kuhmard-Bold.fea Kuhmard-Bold.ufo
 ```
 
 - `ai_glyphs.json`: the Persian master drawing, letter by letter
