@@ -1,6 +1,6 @@
 """Write the UFO source of Kuhmard from a build (Google Fonts builds fonts from UFO sources).
 
-    python3 export_ufo.py otf/Kuhmard-Bold.otf features/Kuhmard-Bold.fea ../sources-ufo/Kuhmard-Bold.ufo
+    python3 export_ufo.py otf/Kuhmard-Bold.otf features/Kuhmard-Bold.fea Kuhmard-Bold.ufo
 
 build_ai.py draws every letter, places the dots and writes the feature code; this script
 carries all of it into a UFO, which fontmake / gftools builder turn back into the same font:

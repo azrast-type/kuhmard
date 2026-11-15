@@ -1,0 +1,12 @@
+# gftools builder (Google Fonts):  gftools builder sources/config.yaml
+# Kuhmard has one style, Bold, and no variable axis.
+sources:
+  - Kuhmard-Bold.ufo
+familyName: Kuhmard
+buildVariable: false
+buildStatic: true
+buildTTF: true
+buildOTF: true
+buildWebfont: true
+outputDir: ../fonts
+autohintTTF: true
