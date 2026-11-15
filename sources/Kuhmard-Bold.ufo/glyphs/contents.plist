@@ -92,6 +92,8 @@
     <string>bracketright.glif</string>
     <key>bullet</key>
     <string>bullet.glif</string>
+    <key>caroncomb.alt</key>
+    <string>caroncomb.alt.glif</string>
     <key>colon</key>
     <string>colon.glif</string>
     <key>comma</key>
@@ -224,6 +226,8 @@
     <string>hehyeh.fina.glif</string>
     <key>hyphen</key>
     <string>hyphen.glif</string>
+    <key>idotaccent</key>
+    <string>idotaccent.glif</string>
     <key>jeem</key>
     <string>jeem.glif</string>
     <key>jeem.fina</key>
@@ -332,6 +336,10 @@
     <string>period.glif</string>
     <key>periodcentered</key>
     <string>periodcentered.glif</string>
+    <key>periodcentered.loclCAT</key>
+    <string>periodcentered.loclC_A_T_.glif</string>
+    <key>periodcentered.loclCAT.case</key>
+    <string>periodcentered.loclC_A_T_.case.glif</string>
     <key>perthousand</key>
     <string>perthousand.glif</string>
     <key>plus</key>
