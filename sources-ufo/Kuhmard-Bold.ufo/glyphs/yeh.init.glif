@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="yeh.init" format="2">
+  <advance width="349"/>
+  <unicode hex="FBE8"/>
+  <unicode hex="FBFE"/>
+  <unicode hex="FEF3"/>
+  <outline>
+    <contour>
+      <point x="75" y="364" type="line"/>
+      <point x="75" y="89" type="line"/>
+      <point x="-3" y="89" type="line"/>
+      <point x="-3" y="0" type="line"/>
+      <point x="226" y="0" type="line"/>
+      <point x="226" y="276" type="line"/>
+      <point x="293" y="276" type="line"/>
+      <point x="293" y="364" type="line"/>
+    </contour>
+    <contour>
+      <point x="304" y="-195" type="line"/>
+      <point x="304" y="-106" type="line"/>
+      <point x="63" y="-106" type="line"/>
+      <point x="63" y="-195" type="line"/>
+    </contour>
+  </outline>
+</glyph>

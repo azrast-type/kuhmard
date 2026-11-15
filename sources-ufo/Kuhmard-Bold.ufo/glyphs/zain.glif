@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="zain" format="2">
+  <advance width="520"/>
+  <unicode hex="0632"/>
+  <unicode hex="FEAF"/>
+  <outline>
+    <contour>
+      <point x="397" y="0" type="line"/>
+      <point x="397" y="275" type="line"/>
+      <point x="464" y="275" type="line"/>
+      <point x="464" y="364" type="line"/>
+      <point x="245" y="364" type="line"/>
+      <point x="246" y="0" type="line"/>
+      <point x="191" y="-105" type="line"/>
+      <point x="56" y="-105" type="line"/>
+      <point x="56" y="-195" type="line"/>
+      <point x="218" y="-195" type="line" smooth="yes"/>
+      <point x="268" y="-195"/>
+      <point x="314" y="-165"/>
+      <point x="337" y="-120" type="curve" smooth="yes"/>
+    </contour>
+    <contour>
+      <point x="389" y="429" type="line"/>
+      <point x="389" y="553" type="line"/>
+      <point x="264" y="553" type="line"/>
+      <point x="264" y="429" type="line"/>
+    </contour>
+  </outline>
+</glyph>
