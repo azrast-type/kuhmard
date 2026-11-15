@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="teh.init.rk47" format="2">
+  <advance width="396"/>
+  <outline>
+    <contour>
+      <point x="122" y="364" type="line"/>
+      <point x="122" y="89" type="line"/>
+      <point x="-3" y="89" type="line"/>
+      <point x="-3" y="0" type="line"/>
+      <point x="273" y="0" type="line"/>
+      <point x="273" y="276" type="line"/>
+      <point x="340" y="276" type="line"/>
+      <point x="340" y="364" type="line"/>
+    </contour>
+    <contour>
+      <point x="304" y="447" type="line"/>
+      <point x="304" y="535" type="line"/>
+      <point x="63" y="535" type="line"/>
+      <point x="63" y="447" type="line"/>
+    </contour>
+  </outline>
+</glyph>
