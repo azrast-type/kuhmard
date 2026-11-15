@@ -52,7 +52,7 @@ MARK_GAP = (json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__
             if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "marks_drawn.json")) else 55)
 LINE_ASC, LINE_DESC = 900, 400   # one line height (1.3) on every system; was 920/430 Mac, 1150/560 Windows (9 Nov review)
 SPACE_W = 138      # word space: Aly's استاد کهنه note (4 Nov): about 250 units between words (was 45 -> 156)
-VERSION = "1.001"  # 0.86: Google Fonts Latin Core accents + Azrast credits; 0.861: dots of ث ش ژ level with ل (14 Nov 2026); 1.0: approved by Aly as the first release (14 Nov 2026); 1.001: Dutch accents attach, Urdu ٹ ڈ ڑ ے (14 Nov 2026)
+VERSION = "1.002"  # 0.86: Google Fonts Latin Core accents + Azrast credits; 0.861: dots of ث ش ژ level with ل (14 Nov 2026); 1.0: approved by Aly as the first release (14 Nov 2026); 1.001: Dutch accents attach, Urdu ٹ ڈ ڑ ے (14 Nov 2026); 1.002: Google Fonts Latin language forms caroncomb.alt, idotaccent, Catalan l·l (15 Nov 2026)
 # the Azrast team, in the order of the team page (Aly, 14 Nov 2026)
 TEAM = [("Aly Taghipour", "Co-founder & Technical Director"),
         ("Ali Shir Dastina", "Co-founder & Design Director"),
@@ -1414,6 +1414,29 @@ def build(style, dot_rounds=()):
             else:
                 add(gname, P(g["d"]), g["adv"], g["cps"], base=False)
                 (latin_marks if all(0x300 <= cp <= 0x36F for cp in g["cps"]) else latin).append(gname)
+    # Google Fonts Latin Core language forms (1.002, Aly 15 Nov 2026), cut from Rokkitt's own letters:
+    #   caroncomb.alt: the apostrophe caron of ď ľ ť Ľ, for d l t L followed by U+030C
+    #   idotaccent: Turkish, Azerbaijani, Crimean Tatar, Kazakh, Tatar i keeps its dot (locl)
+    #   periodcentered.loclCAT (.case): the Catalan dot of l·l / L·L, spaced as Rokkitt's ŀ / Ŀ
+    lang_forms = {}
+    if lat and all(n in paths for n in ("uni0064", "uni010F", "uni0069", "uni006C", "uni0140", "uni004C", "uni013F")):
+        caron_bases = {}
+        for comp, base in (("uni010F", "uni0064"), ("uni013E", "uni006C"), ("uni0165", "uni0074"), ("uni013D", "uni004C")):
+            if comp in paths and base in paths:
+                part = diff(paths[comp][0], paths[base][0])
+                caron_bases[base] = (part, part.bounds)
+        part, (cx0, cy0, _, _) = caron_bases["uni0064"]
+        add("caroncomb.alt", shift(part, -round(cx0), 0), 0, [], base=False)
+        lang_forms["caron_anchor"] = {b: (round(bb[0] - cx0 + round(cx0)), round(bb[1] - cy0)) for b, (_, bb) in caron_bases.items()}
+        add("idotaccent", paths["uni0069"][0], paths["uni0069"][1], [], base=False)
+        latin.append("idotaccent")
+        l_adv, L_adv = paths["uni006C"][1], paths["uni004C"][1]
+        dot_l = diff(paths["uni0140"][0], paths["uni006C"][0])
+        add("periodcentered.loclCAT", shift(dot_l, -l_adv), paths["uni0140"][1] - l_adv, [], base=False)
+        dot_L = diff(paths["uni013F"][0], paths["uni004C"][0])
+        add("periodcentered.loclCAT.case", shift(dot_L, -L_adv), paths["uni013F"][1] - L_adv, [], base=False)
+        latin += ["periodcentered.loclCAT", "periodcentered.loclCAT.case"]
+        lang_forms["dots"] = [g for g in ("periodcentered", "uni00B7", "uni00B7.latn") if g in paths]
     print()
     print(f"latin: {len(latin)} glyphs, {len(latin_swaps)} shown only in Latin text")
     print(f"kerning: {len(kpairs)} pairs, {len(kalts)} dot-shifted alternates; left serifs {klefts}; right serifs {len(krights)} glyphs")
@@ -1469,12 +1492,25 @@ def build(style, dot_rounds=()):
     fea = ["languagesystem DFLT dflt;", "languagesystem arab dflt;", "languagesystem arab FAR;"]
     if lat:
         fea.append("languagesystem latn dflt;")
+    LANGS_I = ("TRK", "AZE", "CRT", "KAZ", "TAT")          # i keeps its dot (idotaccent)
+    if lang_forms:
+        fea += [f"languagesystem latn {t};" for t in LANGS_I + ("CAT",)]
     fea.append("@BASES = [" + " ".join(bases + latin) + "];")
-    fea.append("@MARKS = [" + " ".join(marks_top + marks_bot + latin_marks + ["zwnj", "zwj", "zerowidth"]) + "];")
+    fea.append("@MARKS = [" + " ".join(marks_top + marks_bot + latin_marks + (["caroncomb.alt"] if lang_forms else []) + ["zwnj", "zwj", "zerowidth"]) + "];")
     fea.append("table GDEF { GlyphClassDef @BASES, , @MARKS, ; } GDEF;")
     if latin_swaps:
         sw = "\n".join(f"    sub {a} by {b};" for a, b in latin_swaps.items())
         fea.append("feature locl {\n    script latn;\n" + sw + "\n} locl;")
+    if lang_forms:
+        dots = "[" + " ".join(lang_forms["dots"]) + "]"
+        loc = ["feature locl {", "    script latn;"]
+        for t in LANGS_I:
+            loc += [f"    language {t};", "    lookup locl_i { sub uni0069 by idotaccent; } locl_i;" if t == LANGS_I[0] else "    lookup locl_i;"]
+        loc += ["    language CAT;", "    lookup locl_cat {",
+                f"        sub uni006C {dots}' uni006C by periodcentered.loclCAT;",
+                f"        sub uni004C {dots}' uni004C by periodcentered.loclCAT.case;",
+                "    } locl_cat;", "} locl;"]
+        fea.append("\n".join(loc))
         fea.append('feature ss01 {\n    featureNames { name "Latin digits and signs"; };\n' + sw + "\n} ss01;")
     for f in ("init", "medi", "fina"):
         fea.append(f"feature {f} {{\n" + "\n".join(subs[f]) + f"\n}} {f};")
@@ -1553,6 +1589,12 @@ def build(style, dot_rounds=()):
         if ltop and "uni0131" in paths and "uni0237" in paths:      # i and j drop their dot under a top accent
             fea.append("feature ccmp {\n    sub uni0069' [" + " ".join(ltop) + "] by uni0131;\n"
                        "    sub uni006A' [" + " ".join(ltop) + "] by uni0237;\n} ccmp;")
+    if lang_forms:                                  # d l t L + U+030C draw as ď ľ ť Ľ
+        ca = lang_forms["caron_anchor"]
+        fea.append("feature ccmp {\n    sub [" + " ".join(ca) + "] uni030C' by caroncomb.alt;\n} ccmp;")
+        fea.append("markClass caroncomb.alt <anchor 0 0> @LCARON;")
+        fea.append("feature mark {\n  lookup latn_caron {\n" + "\n".join(
+            f"    pos base {b} <anchor {x} {y}> mark @LCARON;" for b, (x, y) in ca.items()) + "\n  } latn_caron;\n} mark;")
     mk = []
     for m in marks_top:
         b = paths[m][0].bounds
