@@ -1,5 +1,4 @@
-Copyright 2026 The Kuhmard Project Authors (https://github.com/azrast-type/kuhmard)
-Latin letters, digits and signs adapted from Rokkitt, Copyright 2016 The Rokkit Project Authors (https://github.com/googlefonts/RokkittFont)
+Copyright 2026 The Kuhmard Project Authors (https://github.com/azrast-type/kuhmard), with Latin letters, digits and signs adapted from Rokkitt, Copyright 2016 The Rokkit Project Authors (https://github.com/googlefonts/RokkittFont)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
