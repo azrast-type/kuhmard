@@ -14,7 +14,7 @@ strokes, with its own Latin, so bilingual work finally looks like one design.
 - **Scripts:** Persian and Arabic (with the Urdu letters ٹ ڈ ڑ ے), Latin (Google Fonts Latin Core)
 - **Letterforms:** after the lettering of the 3rd Tehran International Film Festival (1974)
 - **Latin:** adapted from [Rokkitt](https://github.com/googlefonts/RokkittFont) (OFL), resized to the Persian letter height and stroke
-- **Version:** 1.001
+- **Version:** 1.002
 
 ## Team
 
